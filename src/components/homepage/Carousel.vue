@@ -20,7 +20,7 @@
                 elit. Explicabo fugiat
                 consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem
                 dolores saepe earum autem! Tenetur vel amet itaque.</p>
-            <a href="/login" target="_blank" class="group mt-10 download-button-a">
+            <a href="/login" target="_blank" class="group download-button-a mt-10">
                 <span class="z-40">Download for windows</span>
                 <svg class="z-40 ml-2 -mr-1 w-3 h-3 transition-all duration-300 group-hover:translate-x-1"
                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -31,7 +31,8 @@
                 <div class="download-button-div">
                 </div>
             </a>
-            <a href="/login" target="_blank" class="group mt-10 download-button-a">
+            <br>
+            <a href="/login" target="_blank" class="group download-button-a mt-10">
                 <span class="z-40">Download for android</span>
                 <svg class="z-40 ml-2 -mr-1 w-3 h-3 transition-all duration-300 group-hover:translate-x-1"
                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
