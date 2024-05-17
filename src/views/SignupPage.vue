@@ -2,7 +2,7 @@
     <div class="h-screen w-screen flex justify-center">
         <div class="w-screen mx-12 mt-20 h-72 text-white">
             <h1 class="text-[50px] h-28 main-title">
-                <VueTypewriterEffect :strings="['Log into your account!', 'Log in!']" />
+                <VueTypewriterEffect :strings="['Create a new account!', 'Sign up!']" />
             </h1>
             <div class="relative w-[100%] flex flex-row items-center mt-10 justify-center h-12 text-white">
                 <div class="login-form-icon" v-motion-slide-visible-once-left>
@@ -16,13 +16,12 @@
                 </div>
             </div>
             <form action="">
-                <input type="text" class="log-in-form w-[100%] md:w-[23.5rem]" placeholder="Email"
-                    v-motion-slide-visible-once-left v-model="email"
-                    :class="isEmailValid === false ? 'wrong-email' : ''">
+                <input type="text" class="log-in-form" placeholder="Email" v-motion-slide-visible-once-left
+                    v-model="email" :class="isEmailValid === false ? 'wrong-email' : ''">
                 <div class="flex flex-row">
-                    <input :type="showPassword === true ? 'text' : 'password'" class="log-in-form w-[80%] md:w-80"
+                    <input :type="showPassword === true ? 'text' : 'password'" class="log-in-form w-[80%]"
                         placeholder="Password" v-motion-slide-visible-once-right v-model="password">
-                    <div class="show-password-button md:ml-2" @click="showPassword = !showPassword">
+                    <div class="show-password-button" @click="showPassword = !showPassword">
                         <BIconEye v-if="!showPassword" />
                         <BIconEyeSlash v-if="showPassword" />
                     </div>
@@ -39,12 +38,8 @@
                 <span class="password-strength-box" :class="strengthLevel > 4 ? 'password-strength-4' : ''">
                 </span>
             </div>
-            <div class="relative w-[100%] flex flex-col justify-center mt-10">
-                <button class="download-button w-16 h-10" v-motion-slide-visible-once-left>Log in</button>
-                <RouterLink to="/signup">
-                    <button class="download-button h-10 w-40 mt-4" v-motion-slide-visible-once-right>Create an
-                        account</button>
-                </RouterLink>
+            <div class="relative w-[100%] flex justify-center mt-8">
+                <button class="download-button w-40 h-10" v-motion-slide-visible-once-left>Create the account</button>
             </div>
         </div>
     </div>

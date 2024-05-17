@@ -1,7 +1,7 @@
 
 import { BIconCaretRight } from 'bootstrap-icons-vue';
 <template>
-    <div class="flex flex-col w-screen h-[100%] bg-primary z-50" v-motion-slide-visible-top>
+    <div class="flex flex-col w-screen h-[100%] bg-primary z-50 top-12 rounded-b-xl" v-motion-slide-visible-top>
         <div class="expand-text group">
             <RouterLink to="/">
                 Home

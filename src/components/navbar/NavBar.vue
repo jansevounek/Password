@@ -18,7 +18,7 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
     <div class="bg-primary h-12 w-screen flex flex-row relative">
         <div class="navbar-logo-container">
             <RouterLink to="/">
-                <img src="../../../favicon.ico" alt="logo" class="h-10 w-10" />
+                <h1 class="main-title text-white">PassDf</h1>
             </RouterLink>
         </div>
         <div class="navbar-icon-container">

@@ -3,54 +3,53 @@ import { BIconWindow } from 'bootstrap-icons-vue';
 
 import { BIcon0Circle } from 'bootstrap-icons-vue';
 <template>
+    <HomePageNavBar />
     <div>
-        <div class="homepage-text px-6 text-left mt-12" v-motion-slide-visible-once-bottom>
-            <h1 class="text-[50px] break-words">The Best</h1>
-            <h1 class="text-[50px] break-words">Password</h1>
-            <h1 class="text-[50px] break-words">Manager</h1>
-            <p class="text-[15px] text-gray-400 mt-6">
-                The best password manager for your needs. <br />
-                Keep your passwords safe and secure.
-            </p>
-        </div>
-        <div class="homepage-text mt-32 p-6 bg-primary p-primary text-end">
-            <h1 class="text-[50px] break-words mt-10">
-                <VueTypewriterEffect :strings="['Download', 'now!', 'Download Now!']" />
-            </h1>
-            <p class="text-[15px] text-gray-400 mt-6" v-motion-slide-visible-once-left>
-                Download the best password manager now! <br />
-                So you can keep your passwords safe and secure.
-            </p>
-            <div class="w-[100%] flex flex-row mt-5" v-motion-slide-visible-once-left>
-                <button class="download-button d-btn">
-                    Download for
-                    <BIconWindows class="ml-2" />
-                </button>
-                <button class="download-button">
-                    Download for
-                    <BIconApple class="ml-2" />
-                </button>
+        <div class="h-[100vh] relative">
+            <div class="homepage-text" id="left-side" ref="left">
+                <h1 class="title text-font">We go
+                    <span class="special-left">fastest</span>
+                </h1>
+            </div>
+            <div class="homepage-text" id="right-side">
+                <h1 class="title text-font">We go
+                    <span class="special-right">spyless</span>
+                </h1>
             </div>
         </div>
-        <div class="homepage-text mt-32 px-6 text-left" v-motion-slide-visible-once-right>
-            <h1 class="text-[50px] break-words">Create An</h1>
-            <h1 class="text-[50px] break-words">Account</h1>
-            <h1 class="text-[50px] break-words">Today!</h1>
-            <p class="text-[15px] text-gray-400 mt-6">
-                ... and start using the best password manager there is. <br />
-            </p>
-            <div class="w-[100%] flex justify-center mt-5">
-                <button class="account-button">
-                    Create an account
-                </button>
+        <div class="h-20 relative">
+            <div class="slider-end" id="slider-left-end" ref="leftEnd">
+            </div>
+            <div class="slider-end" id="slider-right-end" ref="rightEnd">
             </div>
         </div>
-        <div class="mt-80 px-6 text-white text-sm">
-            @ The Best Password Manager 2021
-        </div>
+
+        <!-- Carousel from https://tailwindcomponents.com/component/page-scroll-sticky -->
+        <Carousel />
     </div>
 </template>
 
 <script setup>
 import VueTypewriterEffect from "vue-typewriter-effect";
+import { ref } from "vue";
+import HomePageNavBar from "../components/navbar/HomePageNavBar.vue";
+import { BIconAndroid, BIconFacebook } from "bootstrap-icons-vue";
+import Carousel from "../components/homepage/Carousel.vue";
+
+const left = ref('left')
+const leftEnd = ref('heading-end')
+const rightEnd = ref('heading-end')
+
+const handleOnMove = e => {
+    const p = e.clientX / window.innerWidth * 100;
+
+    left.value.style.width = `${p}%`
+    leftEnd.value.style.width = `${p}%`
+    rightEnd.value.style.width = `${100 - p}%`
+    rightEnd.value.style.left = `${p}%`
+}
+
+document.onmousemove = e => handleOnMove(e);
+
+document.ontouchmove = e => handleOnMove(e.touches[0]);
 </script>
