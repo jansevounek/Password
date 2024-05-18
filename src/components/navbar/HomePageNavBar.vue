@@ -21,6 +21,26 @@
                     <BIconList class="h-5 w-5 text-white" />
                 </div>
             </div>
+            <div class="navbar-text-container">
+                <div class="navbar-text text-secondary">
+                    <RouterLink to="/login">
+                        Log in
+                    </RouterLink>
+                </div>
+                <div class="navbar-text text-secondary">
+                    <RouterLink to="/signup">
+                        Sign up
+                    </RouterLink>
+                </div>
+                <div class="navbar-text text-secondary">
+                    <a href="#download">Download</a>
+                </div>
+                <div class="navbar-text text-secondary">
+                    <RouterLink to="/mypasswords">
+                        My passwords
+                    </RouterLink>
+                </div>
+            </div>
         </div>
     </div>
     <NavBarExpand v-if="showAddon" class="absolute md:hidden" />

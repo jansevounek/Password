@@ -1,44 +1,23 @@
 <template>
     <div class="h-screen w-screen flex justify-center">
-        <div class="w-screen mx-12 mt-20 h-72 text-white">
+        <div class="login-container">
             <h1 class="text-[50px] h-28 main-title">
                 <VueTypewriterEffect :strings="['Log into your account!', 'Log in!']" />
             </h1>
-            <div class="relative w-[100%] flex flex-row items-center mt-10 justify-center h-12 text-white">
-                <div class="login-form-icon" v-motion-slide-visible-once-left>
-                    <BIconGoogle class="h-4 w-4" />
-                </div>
-                <div class="login-form-icon" v-motion-slide-visible-once-bottom>
-                    <BIconGithub class="h-4 w-4" />
-                </div>
-                <div class="login-form-icon" v-motion-slide-visible-once-right>
-                    <BIconFacebook class="h-4 w-4" />
-                </div>
-            </div>
+            <LoginSignupSocials />
             <form action="">
-                <input type="text" class="log-in-form w-[100%] md:w-[23.5rem]" placeholder="Email"
+                <input type="text" class="log-in-form w-[100%] text-white" placeholder="Email"
                     v-motion-slide-visible-once-left v-model="email"
-                    :class="isEmailValid === false ? 'wrong-email' : ''">
+                    :class="isEmailValid === false ? 'wrong-email' : 'text-green-600'">
                 <div class="flex flex-row">
-                    <input :type="showPassword === true ? 'text' : 'password'" class="log-in-form w-[80%] md:w-80"
+                    <input :type="showPassword === true ? 'text' : 'password'" class="log-in-form w-[80%]"
                         placeholder="Password" v-motion-slide-visible-once-right v-model="password">
-                    <div class="show-password-button md:ml-2" @click="showPassword = !showPassword">
+                    <div class="show-password-button" @click="showPassword = !showPassword">
                         <BIconEye v-if="!showPassword" />
                         <BIconEyeSlash v-if="showPassword" />
                     </div>
                 </div>
-
             </form>
-            <div class="flex relative flex-row mb-2 h-10 w-[100%] justify-end items-center">
-                <span class="password-strength-box" :class="strengthLevel > 1 ? 'password-strength-1' : ''">
-                </span>
-                <span class="password-strength-box" :class="strengthLevel > 2 ? 'password-strength-2' : ''">
-                </span>
-                <span class="password-strength-box" :class="strengthLevel > 3 ? 'password-strength-3' : ''">
-                </span>
-                <span class="password-strength-box" :class="strengthLevel > 4 ? 'password-strength-4' : ''">
-                </span>
-            </div>
             <div class="relative w-[100%] flex flex-col justify-center mt-10">
                 <button class="download-button w-16 h-10" v-motion-slide-visible-once-left>Log in</button>
                 <RouterLink to="/signup">
@@ -53,7 +32,7 @@
 <script setup>
 import VueTypewriterEffect from "vue-typewriter-effect";
 import { ref, computed } from 'vue'
-import { parse } from "vue/compiler-sfc";
+import LoginSignupSocials from '../components/login-signup/LoginSignupSocials.vue'
 
 const showPassword = ref(false)
 

@@ -1,6 +1,6 @@
 <template>
     <div class="h-screen w-screen flex justify-center">
-        <div class="w-screen mx-12 mt-20 h-72 text-white">
+        <div class="signup-container">
             <h1 class="text-[50px] h-28 main-title">
                 <VueTypewriterEffect :strings="['Create a new account!', 'Sign up!']" />
             </h1>

@@ -27,8 +27,8 @@ import { BIconCaretRight } from 'bootstrap-icons-vue';
             </div>
         </div>
         <div class="expand-text group">
-            <RouterLink to="/myaccount">
-                My account
+            <RouterLink to="/mypasswords">
+                My Passwords
             </RouterLink>
             <div class="expand-text-icon scale-0 group-hover:scale-100 transition-all divide-purple-100">
                 <BIconCaretRight class="h-5 w-5 text-white" />

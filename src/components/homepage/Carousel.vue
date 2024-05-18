@@ -14,7 +14,7 @@
             </RouterLink>
         </div>
         <div class="second-carousel-part carousel-part top-40">
-            <h1 class="text-[50px] main-title">Download now</h1>
+            <h1 class="text-[50px] main-title" id="download">Download now</h1>
             <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">Lorem, ipsum dolor sit amet consectetur
                 adipisicing
                 elit. Explicabo fugiat
@@ -78,7 +78,7 @@
             </div>
         </div>
         <div class="carousel-part bg-secondary text-white top-80 rounded-none">
-            <h1 class="text-[50px] main-title">About us</h1>
+            <h1 class="text-[50px] main-title" id="aboutus">About us</h1>
             <p>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugiat consequatur sint aperiam
                 fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem dolores saepe earum autem!

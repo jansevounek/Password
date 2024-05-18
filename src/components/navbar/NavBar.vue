@@ -36,6 +36,23 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
                 <BIconList class="h-5 w-5 text-white" />
             </div>
         </div>
+        <div class="navbar-text-container">
+            <div class="navbar-text">
+                <RouterLink to="/">
+                    Home
+                </RouterLink>
+            </div>
+            <div class="navbar-text">
+                <RouterLink to="/signup">
+                    Sign up
+                </RouterLink>
+            </div>
+            <div class="navbar-text">
+                <RouterLink to="/login">
+                    Log in
+                </RouterLink>
+            </div>
+        </div>
     </div>
     <NavBarExpand v-if="showAddon" class="absolute md:hidden" />
 </template>

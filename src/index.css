@@ -33,7 +33,15 @@ html {
     }
 
     .navbar-icon-container {
-        @apply relative flex flex-row items-center justify-end w-[100%] h-12 mr-2;
+        @apply relative md:hidden flex flex-row items-center justify-end w-[100%] h-12 mr-2;
+    }
+
+    .navbar-text-container {
+        @apply hidden md:flex relative flex-row w-screen ml-4 items-center justify-start;
+    }
+
+    .navbar-text {
+        @apply text-font text-white text-[20px] ml-8;
     }
 
     .navbar-icon {
@@ -162,5 +170,14 @@ html {
     }
     .second-carousel-part {
         @apply bg-primary text-white text-center;
+    }
+
+    /* login stuff */
+    .login-container {
+        @apply w-screen mx-12 mt-20 h-72 text-white sm:w-80;
+    }
+
+    .signup-container {
+        @apply w-screen mx-12 mt-20 h-72 text-white sm:w-80;
     }
 }
