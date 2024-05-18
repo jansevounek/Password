@@ -15,7 +15,7 @@ import { BIconSearch } from 'bootstrap-icons-vue';
 
 import { BIcon0Circle } from 'bootstrap-icons-vue';
 <template>
-    <div class="bg-primary h-12 w-screen flex flex-row relative">
+    <div class="bg-primary h-12 w-screen flex flex-row fixed">
         <div class="navbar-logo-container">
             <RouterLink to="/">
                 <h1 class="main-title text-white">PassDf</h1>
@@ -32,6 +32,9 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
                     <BIconPlusSquare class="h-5 w-5 text-white" />
                 </RouterLink>
             </div>
+            <div class="navbar-icon">
+                <BIconTranslate class="h-5 w-5 text-white" />
+            </div>
             <div class="navbar-icon" @click="handleNavBarExpand">
                 <BIconList class="h-5 w-5 text-white" />
             </div>
@@ -39,17 +42,17 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
         <div class="navbar-text-container">
             <div class="navbar-text">
                 <RouterLink to="/">
-                    Home
+                    {{ $t("nav.home") }}
                 </RouterLink>
             </div>
             <div class="navbar-text">
                 <RouterLink to="/signup">
-                    Sign up
+                    {{ $t("nav.signup") }}
                 </RouterLink>
             </div>
             <div class="navbar-text">
                 <RouterLink to="/login">
-                    Log in
+                    {{ $t("nav.login") }}
                 </RouterLink>
             </div>
         </div>

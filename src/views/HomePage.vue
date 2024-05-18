@@ -7,13 +7,13 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
     <div>
         <div class="h-[100vh] relative">
             <div class="homepage-text" id="left-side" ref="left">
-                <h1 class="title text-font">We go
-                    <span class="special-left">fastest</span>
+                <h1 class="title text-font">{{ $t("heading.header") }}
+                    <span class="special-left">{{ $t("heading.header1") }}</span>
                 </h1>
             </div>
             <div class="homepage-text" id="right-side">
-                <h1 class="title text-font">We go
-                    <span class="special-right">spyless</span>
+                <h1 class="title text-font">{{ $t("heading.header") }}
+                    <span class="special-right">{{ $t("heading.header2") }}</span>
                 </h1>
             </div>
         </div>
@@ -30,10 +30,8 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
 </template>
 
 <script setup>
-import VueTypewriterEffect from "vue-typewriter-effect";
 import { ref } from "vue";
 import HomePageNavBar from "../components/navbar/HomePageNavBar.vue";
-import { BIconAndroid, BIconFacebook } from "bootstrap-icons-vue";
 import Carousel from "../components/homepage/Carousel.vue";
 
 const left = ref('left')

@@ -180,4 +180,11 @@ html {
     .signup-container {
         @apply w-screen mx-12 mt-20 h-72 text-white sm:w-80;
     }
+
+    .language-dropdown {
+        @apply bg-transparent text-white border-none;
+    }
+    .language-dropdown-item {
+        @apply bg-tertiary text-white border-none;
+    }
 }

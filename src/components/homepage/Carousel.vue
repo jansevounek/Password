@@ -1,27 +1,19 @@
 <template>
     <div class="relative mt-80">
         <div class="first-carousel-part carousel-part top-20">
-            <h1 class="text-[50px] main-title">Create an account</h1>
-            <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">Lorem, ipsum dolor sit amet consectetur
-                adipisicing
-                elit. Explicabo fugiat
-                consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem
-                dolores saepe earum autem! Tenetur vel amet itaque.</p>
+            <h1 class="text-[50px] main-title">{{ $t("createaccount.header") }}</h1>
+            <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">{{ $t("createaccount.text") }}</p>
             <RouterLink to="/signup">
                 <button class="mt-10 weird-button">
-                    Create an account
+                    {{ $t("createaccount.button") }}
                 </button>
             </RouterLink>
         </div>
         <div class="second-carousel-part carousel-part top-40">
-            <h1 class="text-[50px] main-title" id="download">Download now</h1>
-            <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">Lorem, ipsum dolor sit amet consectetur
-                adipisicing
-                elit. Explicabo fugiat
-                consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem
-                dolores saepe earum autem! Tenetur vel amet itaque.</p>
+            <h1 class="text-[50px] main-title" id="download">{{ $t("download.header") }}</h1>
+            <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">{{ $t("download.text") }}</p>
             <a href="/login" target="_blank" class="group download-button-a mt-10">
-                <span class="z-40">Download for windows</span>
+                <span class="z-40">{{ $t("download.button1") }}</span>
                 <svg class="z-40 ml-2 -mr-1 w-3 h-3 transition-all duration-300 group-hover:translate-x-1"
                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -33,7 +25,7 @@
             </a>
             <br>
             <a href="/login" target="_blank" class="group download-button-a mt-10">
-                <span class="z-40">Download for android</span>
+                <span class="z-40">{{ $t("download.button2") }}</span>
                 <svg class="z-40 ml-2 -mr-1 w-3 h-3 transition-all duration-300 group-hover:translate-x-1"
                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -45,12 +37,8 @@
             </a>
         </div>
         <div class="first-carousel-part carousel-part top-60">
-            <h1 class="text-[50px] main-title">Follow us on socials</h1>
-            <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">Lorem, ipsum dolor sit amet consectetur
-                adipisicing
-                elit. Explicabo fugiat
-                consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem
-                dolores saepe earum autem! Tenetur vel amet itaque.</p>
+            <h1 class="text-[50px] main-title">{{ $t("socials.header") }}</h1>
+            <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">{{ $t("socials.text") }}</p>
             <div class="mt-10 w-[100%] flex flex-row justify-center">
                 <button class="facebook-button mx-auto">
                     <svg class="w-5 h-5 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
@@ -78,12 +66,8 @@
             </div>
         </div>
         <div class="carousel-part bg-secondary text-white top-80 rounded-none">
-            <h1 class="text-[50px] main-title" id="aboutus">About us</h1>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugiat consequatur sint aperiam
-                fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem dolores saepe earum autem!
-                Tenetur vel amet itaque.
-            </p>
+            <h1 class="text-[50px] main-title" id="aboutus">{{ $t("aboutus.header") }}</h1>
+            <p>{{ $t("aboutus.text") }}</p>
             <p class="mt-[50rem]">
                 @All rights reserved
             </p>

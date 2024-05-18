@@ -17,6 +17,13 @@
                         <BIconPlusSquare class="h-5 w-5 text-white" />
                     </RouterLink>
                 </div>
+                <div class="navbar-icon">
+                    <select v-model="locale" class="language-dropdown">
+                        <option class="language-dropdown-item" v-for="sLocale in supportedLocales" :key="`locale-${sLocale}`" :value="sLocale">
+                            {{ sLocale }}
+                        </option>
+                    </select>
+                </div>
                 <div class="navbar-icon" @click="handleNavBarExpand">
                     <BIconList class="h-5 w-5 text-white" />
                 </div>
@@ -24,21 +31,28 @@
             <div class="navbar-text-container">
                 <div class="navbar-text text-secondary">
                     <RouterLink to="/login">
-                        Log in
+                        {{ $t("nav.login") }}
                     </RouterLink>
                 </div>
                 <div class="navbar-text text-secondary">
                     <RouterLink to="/signup">
-                        Sign up
+                        {{ $t("nav.signup") }}
                     </RouterLink>
                 </div>
                 <div class="navbar-text text-secondary">
-                    <a href="#download">Download</a>
+                    <a href="#download">{{ $t("nav.download") }}</a>
                 </div>
                 <div class="navbar-text text-secondary">
                     <RouterLink to="/mypasswords">
-                        My passwords
+                        {{ $t("nav.mypasswords") }}
                     </RouterLink>
+                </div>
+                <div class="navbar-icon">
+                    <select v-model="locale" class="language-dropdown">
+                        <option v-for="sLocale in supportedLocales" :key="`locale-${sLocale}`" :value="sLocale">
+                            {{ sLocale }}
+                        </option>
+                    </select>
                 </div>
             </div>
         </div>
@@ -50,12 +64,17 @@
 import NavBarExpand from './NavBarExpand.vue'
 import { ref } from 'vue'
 import { RouterLink } from 'vue-router';
+import Tr from "@/i18n/translation"
+import { useI18n } from 'vue-i18n'
+
+const { locale } = useI18n()
+
+const supportedLocales = Tr.supportedLocales
 
 const showAddon = ref(false)
-
-//const navLeft = ref(null)
 
 const handleNavBarExpand = () => {
     showAddon.value = !showAddon.value
 }
+
 </script>

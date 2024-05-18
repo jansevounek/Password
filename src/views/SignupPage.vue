@@ -39,7 +39,9 @@
                 </span>
             </div>
             <div class="relative w-[100%] flex justify-center mt-8">
-                <button class="download-button w-40 h-10" v-motion-slide-visible-once-left>Create the account</button>
+                <button class="download-button w-40 h-10" v-motion-slide-visible-once-left>
+                    {{ $t("signup.button1") }}
+                </button>
             </div>
         </div>
     </div>

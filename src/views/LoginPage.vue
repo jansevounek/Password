@@ -19,10 +19,12 @@
                 </div>
             </form>
             <div class="relative w-[100%] flex flex-col justify-center mt-10">
-                <button class="download-button w-16 h-10" v-motion-slide-visible-once-left>Log in</button>
+                <button class="download-button h-10" v-motion-slide-visible-once-left>{{
+                    $t("login.button1") }}</button>
                 <RouterLink to="/signup">
-                    <button class="download-button h-10 w-40 mt-4" v-motion-slide-visible-once-right>Create an
-                        account</button>
+                    <button class="download-button h-10 w-48 mt-4 text-nowrap" v-motion-slide-visible-once-right>
+                        {{$t("login.button2")}}
+                    </button>
                 </RouterLink>
             </div>
         </div>
