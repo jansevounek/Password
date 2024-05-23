@@ -1,4 +1,3 @@
-
 import { BIconWindow } from 'bootstrap-icons-vue';
 
 import { BIcon0Circle } from 'bootstrap-icons-vue';
@@ -30,13 +29,17 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
 </template>
 
 <script setup>
-import { ref } from "vue";
+import { computed, ref } from "vue";
 import HomePageNavBar from "../components/navbar/HomePageNavBar.vue";
 import Carousel from "../components/homepage/Carousel.vue";
+import {
+    useMouse
+} from '@vueuse/core'
 
 const left = ref('left')
 const leftEnd = ref('heading-end')
 const rightEnd = ref('heading-end')
+const { y } = useMouse()
 
 const handleOnMove = e => {
     const p = e.clientX / window.innerWidth * 100;
@@ -46,6 +49,10 @@ const handleOnMove = e => {
     rightEnd.value.style.width = `${100 - p}%`
     rightEnd.value.style.left = `${p}%`
 }
+
+const width = computed(() => {
+    return y.value
+})
 
 document.onmousemove = e => handleOnMove(e);
 

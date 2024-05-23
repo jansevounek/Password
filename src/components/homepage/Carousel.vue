@@ -38,7 +38,7 @@
         </div>
         <div class="first-carousel-part carousel-part top-60">
             <h1 class="text-[50px] main-title">{{ $t("homepage.socials.header") }}</h1>
-            <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">{{ $t("socials.text") }}</p>
+            <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">{{ $t("homepage.socials.text") }}</p>
             <div class="mt-10 w-[100%] flex flex-row justify-center">
                 <button class="facebook-button mx-auto">
                     <svg class="w-5 h-5 fill-current" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
