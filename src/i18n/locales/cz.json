@@ -1,42 +1,46 @@
 {
-    "nav": {
-        "login": "Přihlásit se",
-        "signup": "Registrovat se",
-        "download": "Stáhnout",
-        "mypasswords": "Moje hesla",
-        "home": "Domů"
+    "navbar": {
+        "nav": {
+            "login": "Přihlásit se",
+            "signup": "Registrovat se",
+            "download": "Stáhnout",
+            "mypasswords": "Moje hesla",
+            "home": "Domů"
+        },
+        "navexpand": {
+            "home": "Domů",
+            "login": "Přihlásit se",
+            "signup": "Registrovat se",
+            "download": "Stáhnout",
+            "mypasswords": "Moje hesla",
+            "logout": "Odhlásit se"
+        }
     },
-    "navexpand": {
-        "home": "Domů",
-        "login": "Přihlásit se",
-        "signup": "Registrovat se",
-        "download": "Stáhnout",
-        "mypasswords": "Moje hesla",
-        "logout": "Odhlásit se"
-    },
-    "heading": {
-        "header": "Jsme",
-        "header1": "nejlepší",
-        "header2": "nejrychlejší"
-    },
-    "createaccount": {
-        "header": "Vytvořit účet",
-        "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugiat consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem dolores saepe earum autem! Tenetur vel amet itaque.",
-        "button": "Vytvořit účet"
-    },
-    "download": {
-        "header": "Stáhnout nyní",
-        "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugiat consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem dolores saepe earum autem! Tenetur vel amet itaque.",
-        "button1": "Stáhnout pro windows",
-        "button2": "Stáhnout pro android"
-    },
-    "socials": {
-        "header": "Sledujte nás na sociálních sítích",
-        "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugiat consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem dolores saepe earum autem! Tenetur vel amet itaque."
-    },
-    "aboutus": {
-        "header": "O nás",
-        "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugiat consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem dolores saepe earum autem! Tenetur vel amet itaque."
+    "homepage": {
+        "heading": {
+            "header": "Jsme",
+            "header1": "nejlepší",
+            "header2": "nejrychlejší"
+        },
+        "createaccount": {
+            "header": "Vytvořit účet",
+            "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugiat consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem dolores saepe earum autem! Tenetur vel amet itaque.",
+            "button": "Vytvořit účet"
+        },
+        "download": {
+            "header": "Stáhnout nyní",
+            "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugiat consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem dolores saepe earum autem! Tenetur vel amet itaque.",
+            "button1": "Stáhnout pro windows",
+            "button2": "Stáhnout pro android"
+        },
+        "socials": {
+            "header": "Sledujte nás na sociálních sítích",
+            "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugiat consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem dolores saepe earum autem! Tenetur vel amet itaque."
+        },
+        "aboutus": {
+            "header": "O nás",
+            "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugiat consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem dolores saepe earum autem! Tenetur vel amet itaque."
+        }
     },
     "login": {
         "header1": "Přihlaste se do svého účtu!",

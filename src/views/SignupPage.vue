@@ -18,15 +18,16 @@
             <form action="">
                 <input type="text" class="log-in-form" placeholder="Email" v-motion-slide-visible-once-left
                     v-model="email" :class="isEmailValid === false ? 'wrong-email' : ''">
+                <input :type="showPassword === true ? 'text' : 'password'" class="log-in-form" placeholder="Password"
+                    v-motion-slide-visible-once-right v-model="password">
                 <div class="flex flex-row">
                     <input :type="showPassword === true ? 'text' : 'password'" class="log-in-form w-[80%]"
-                        placeholder="Password" v-motion-slide-visible-once-right v-model="password">
+                        placeholder="Repeat the password" v-motion-slide-visible-once-right v-model="repeat_password">
                     <div class="show-password-button" @click="showPassword = !showPassword">
                         <BIconEye v-if="!showPassword" />
                         <BIconEyeSlash v-if="showPassword" />
                     </div>
                 </div>
-
             </form>
             <div class="flex relative flex-row mb-2 h-10 w-[100%] justify-end items-center">
                 <span class="password-strength-box" :class="strengthLevel > 1 ? 'password-strength-1' : ''">

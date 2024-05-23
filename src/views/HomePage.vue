@@ -7,13 +7,13 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
     <div>
         <div class="h-[100vh] relative">
             <div class="homepage-text" id="left-side" ref="left">
-                <h1 class="title text-font">{{ $t("heading.header") }}
-                    <span class="special-left">{{ $t("heading.header1") }}</span>
+                <h1 class="title text-font">{{ $t("homepage.heading.header") }}
+                    <span class="special-left">{{ $t("homepage.heading.header1") }}</span>
                 </h1>
             </div>
             <div class="homepage-text" id="right-side">
-                <h1 class="title text-font">{{ $t("heading.header") }}
-                    <span class="special-right">{{ $t("heading.header2") }}</span>
+                <h1 class="title text-font">{{ $t("homepage.heading.header") }}
+                    <span class="special-right">{{ $t("homepage.heading.header2") }}</span>
                 </h1>
             </div>
         </div>

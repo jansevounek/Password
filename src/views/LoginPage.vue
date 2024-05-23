@@ -1,5 +1,5 @@
 <template>
-    <div class="h-screen w-screen flex justify-center">
+    <div class="h-screen w-screen flex justify-center z-0">
         <div class="login-container">
             <h1 class="text-[50px] h-28 main-title">
                 <VueTypewriterEffect :strings="['Log into your account!', 'Log in!']" />

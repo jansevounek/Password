@@ -1,19 +1,19 @@
 <template>
     <div class="relative mt-80">
         <div class="first-carousel-part carousel-part top-20">
-            <h1 class="text-[50px] main-title">{{ $t("createaccount.header") }}</h1>
-            <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">{{ $t("createaccount.text") }}</p>
+            <h1 class="text-[50px] main-title">{{ $t("homepage.createaccount.header") }}</h1>
+            <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">{{ $t("homepage.createaccount.text") }}</p>
             <RouterLink to="/signup">
                 <button class="mt-10 weird-button">
-                    {{ $t("createaccount.button") }}
+                    {{ $t("homepage.createaccount.button") }}
                 </button>
             </RouterLink>
         </div>
         <div class="second-carousel-part carousel-part top-40">
-            <h1 class="text-[50px] main-title" id="download">{{ $t("download.header") }}</h1>
-            <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">{{ $t("download.text") }}</p>
+            <h1 class="text-[50px] main-title" id="download">{{ $t("homepage.download.header") }}</h1>
+            <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">{{ $t("homepage.download.text") }}</p>
             <a href="/login" target="_blank" class="group download-button-a mt-10">
-                <span class="z-40">{{ $t("download.button1") }}</span>
+                <span class="z-40">{{ $t("homepage.download.button1") }}</span>
                 <svg class="z-40 ml-2 -mr-1 w-3 h-3 transition-all duration-300 group-hover:translate-x-1"
                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -25,7 +25,7 @@
             </a>
             <br>
             <a href="/login" target="_blank" class="group download-button-a mt-10">
-                <span class="z-40">{{ $t("download.button2") }}</span>
+                <span class="z-40">{{ $t("homepage.download.button2") }}</span>
                 <svg class="z-40 ml-2 -mr-1 w-3 h-3 transition-all duration-300 group-hover:translate-x-1"
                     fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
                     <path fill-rule="evenodd"
@@ -37,7 +37,7 @@
             </a>
         </div>
         <div class="first-carousel-part carousel-part top-60">
-            <h1 class="text-[50px] main-title">{{ $t("socials.header") }}</h1>
+            <h1 class="text-[50px] main-title">{{ $t("homepage.socials.header") }}</h1>
             <p class="mt-8 mx-4 sm:mx-10 md:mx-20 lg:mx-36 text-font">{{ $t("socials.text") }}</p>
             <div class="mt-10 w-[100%] flex flex-row justify-center">
                 <button class="facebook-button mx-auto">
@@ -66,8 +66,8 @@
             </div>
         </div>
         <div class="carousel-part bg-secondary text-white top-80 rounded-none">
-            <h1 class="text-[50px] main-title" id="aboutus">{{ $t("aboutus.header") }}</h1>
-            <p>{{ $t("aboutus.text") }}</p>
+            <h1 class="text-[50px] main-title" id="aboutus">{{ $t("homepage.aboutus.header") }}</h1>
+            <p>{{ $t("homepage.aboutus.text") }}</p>
             <p class="mt-[50rem]">
                 @All rights reserved
             </p>

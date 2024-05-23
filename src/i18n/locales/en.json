@@ -1,5 +1,6 @@
 {
-    "nav": {
+    "navbar": {
+        "nav": {
             "login": "Log in",
             "signup": "Sign up",
             "download": "Download",
@@ -13,7 +14,9 @@
             "download": "Download",
             "mypasswords": "My passwords",
             "logout": "Log out"
-        },
+        }
+    },
+    "homepage": {
         "heading": {
             "header": "We go ", 
             "header1": "fastest",
@@ -37,16 +40,17 @@
         "aboutus": {
             "header": "About us",
             "text": "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Explicabo fugiat consequatur sint aperiam fuga voluptate, voluptatem voluptatum quisquam reiciendis maxime minima rem dolores saepe earum autem! Tenetur vel amet itaque"
-        },
-        "login": {
-            "header1": "Log into your account!",
-            "header2": "Log in!",
-            "button1": "Log in",
-            "button2": "Forgot your password?"
-        },
-        "signup": {
-            "header1": "Create an account!",
-            "header2": "Sign up!",
-            "button1": "Create the account"
         }
+    },
+    "login": {
+        "header1": "Log into your account!",
+        "header2": "Log in!",
+        "button1": "Log in",
+        "button2": "Forgot your password?"
+    },
+    "signup": {
+        "header1": "Create an account!",
+        "header2": "Sign up!",
+        "button1": "Create the account"
+    }
 }
