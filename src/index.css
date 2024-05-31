@@ -187,4 +187,7 @@ html {
   .password-list-article {
     @apply text-secondary bg-tertiary h-12 w-screen mx-auto;
   }
+  .signup-error-msg {
+    @apply text-red-400 mt-5;
+  }
 }

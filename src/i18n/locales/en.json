@@ -51,6 +51,11 @@
   "signup": {
     "header1": "Create an account!",
     "header2": "Sign up!",
-    "button1": "Create the account"
+    "button1": "Create the account",
+    "errormsg": {
+      "email": "Invalid email",
+      "password1": "Passwords do not match!",
+      "password2": "Password is too weak"
+    }
   }
 }

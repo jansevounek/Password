@@ -51,6 +51,11 @@
   "signup": {
     "header1": "Vytvořte si účet!",
     "header2": "Registrujte se!",
-    "button1": "Zaregistrovat se"
+    "button1": "Zaregistrovat se",
+    "errormsg": {
+      "email": "Email není platný",
+      "password1": "Hesla nejsou stejná",
+      "password2": "Heslo není dostatečně silné"
+    }
   }
 }

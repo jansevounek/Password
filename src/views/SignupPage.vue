@@ -16,8 +16,15 @@
                 </div>
             </div>
             <form action="">
-                <input type="text" class="log-in-form" placeholder="Email" v-motion-slide-visible-once-left
+                <span class="signup-error-msg" v-if="emailErrorMsg">{{ $t("signup.errormsg.email") }}</span>
+
+                <input type="text" class="log-in-form mt-5" placeholder="Email" v-motion-slide-visible-once-left
                     v-model="email" :class="isEmailValid === false ? 'wrong-email' : ''">
+
+                <span class="signup-error-msg" v-if="password1ErrorMsg">{{ $t("signup.errormsg.password1") }}</span>
+                <br v-if="password2ErrorMsg && password1ErrorMsg">
+                <span class="signup-error-msg" v-if="password2ErrorMsg">{{ $t("signup.errormsg.password2") }}</span>
+
                 <input :type="showPassword === true ? 'text' : 'password'" class="log-in-form" placeholder="Password"
                     v-motion-slide-visible-once-right v-model="password">
                 <div class="flex flex-row">
@@ -57,6 +64,10 @@ import { useRouter } from 'vue-router'
 const showPassword = ref(false)
 
 const router = useRouter()
+
+let emailErrorMsg = ref(false)
+let password1ErrorMsg = ref(false)
+let password2ErrorMsg = ref(false)
 
 const password = ref('')
 const email = ref('')
@@ -110,28 +121,36 @@ const strengthLevel = computed(() => {
 })
 
 async function createAccount() {
-    if (password.value === repeat_password.value) {
-        if (strengthLevel.value == 5) {
-            if (isEmailValid.value && email.value.length > 2) {
-                const { data, error } = await supabase.auth.signUp({
-                    email: email.value,
-                    password: password.value
-                })
-                if (error) {
-                    console.log(error)
-                } else {
-                    console.log(data)
-                    router.push('/')
-                    location.reload()
-                }
-            } else {
-                console.log('Email is not valid!')
-            }
-        } else {
-            console.log('Password is not strong enough!')
-        }
+    if (email.value.length < 3 || !isEmailValid.value) {
+        emailErrorMsg.value = true
     } else {
-        console.log('Passwords do not match!', password.value, repeat_password.value)
+        emailErrorMsg.value = false
+    }
+
+    if (password.value != repeat_password.value) {
+        password1ErrorMsg.value = true
+    } else {
+        password1ErrorMsg.value = false
+    }
+
+    if (strengthLevel.value != 5) {
+        password2ErrorMsg.value = true
+    } else {
+        password2ErrorMsg.value = false
+    }
+
+    if (password.value === repeat_password.value && strengthLevel.value == 5 && isEmailValid.value && email.value.length > 2) {
+        const { data, error } = await supabase.auth.signUp({
+            email: email.value,
+            password: password.value
+        })
+        if (error) {
+            console.log(error)
+        } else {
+            console.log(data)
+            router.push('/')
+            location.reload()
+        }
     }
 }
 </script>
