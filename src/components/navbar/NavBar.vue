@@ -1,4 +1,3 @@
-
 import { BIconBoxArrowRight } from 'bootstrap-icons-vue';
 
 import { BIconPlusSquare } from 'bootstrap-icons-vue';
@@ -22,15 +21,20 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
             </RouterLink>
         </div>
         <div class="navbar-icon-container">
-            <div class="navbar-icon">
+            <div class="navbar-icon" v-if="!status">
                 <RouterLink to="/login">
                     <BIconBoxArrowInRight class="h-5 w-5 text-white" />
                 </RouterLink>
             </div>
-            <div class="navbar-icon">
+            <div class="navbar-icon" v-if="!status">
                 <RouterLink to="/signup">
                     <BIconPlusSquare class="h-5 w-5 text-white" />
                 </RouterLink>
+            </div>
+            <div class="navbar-icon" v-if="status">
+                <p class="cursor-pointer" @click="logOut">
+                    <BIconBoxArrowDownLeft class="h-5 w-5 text-white" />
+                </p>
             </div>
             <div class="navbar-icon">
                 <button @click="changeLocale" class="language-button">
@@ -47,15 +51,18 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
                     {{ $t("navbar.nav.home") }}
                 </RouterLink>
             </div>
-            <div class="navbar-text">
+            <div class="navbar-text" v-if="!status">
                 <RouterLink to="/signup">
                     {{ $t("navbar.nav.signup") }}
                 </RouterLink>
             </div>
-            <div class="navbar-text">
+            <div class="navbar-text" v-if="!status">
                 <RouterLink to="/login">
                     {{ $t("navbar.nav.login") }}
                 </RouterLink>
+            </div>
+            <div class="navbar-text" v-if="status">
+                <p class="cursor-pointer" @click="logOut">{{ $t("navbar.nav.logout") }}</p>
             </div>
             <div class="ml-auto mr-8 h-[100%] flex flex-row items-center">
                 <img src="https://cdn3.iconfinder.com/data/icons/flag-world/512/flags-06-512.png" alt="czech-flag"
@@ -70,28 +77,25 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
             </div>
         </div>
     </div>
-    <NavBarExpand v-if="showAddon" class="absolute md:hidden" />
 </template>
 
 <script setup>
-import NavBarExpand from './NavBarExpand.vue'
-import { ref } from 'vue'
+import NavBarExpandable from './NavBarExpandable.vue'
+import { ref, watchEffect } from 'vue'
 import { RouterLink } from 'vue-router';
 import Tr from "@/i18n/translation"
 import { useI18n } from 'vue-i18n'
+import { supabase } from '@/supabase/init';
+import { useRouter } from 'vue-router'
 
-// showing the navbar expand
-const showAddon = ref(false)
-
-const handleNavBarExpand = () => {
-    showAddon.value = !showAddon.value
-}
+const router = useRouter()
 
 // Changing languages
-const { locale } = useI18n()
 const i18n = useI18n()
 let localeIndex = ref(0)
 const supportedLocales = Tr.supportedLocales
+
+const status = ref(false);
 
 const changeLocale = () => {
     console.log('changing locale')
@@ -99,7 +103,25 @@ const changeLocale = () => {
     localeIndex.value = (localeIndex.value + 1) % supportedLocales.length
     i18n.locale.value = supportedLocales[localeIndex.value]
 }
+
+watchEffect(async () => {
+    const localUser = await supabase.auth.getSession()
+    if (localUser.data.session) {
+        status.value = true
+    } else {
+        status.value = false
+    }
+});
+
+async function logOut() {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+        console.log(error.message)
+    } else {
+        router.push('/')
+        location.reload()
+    }
+}
 </script>
 
-<style>
-</style>
+<style></style>

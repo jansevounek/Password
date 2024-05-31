@@ -40,7 +40,7 @@
                 </span>
             </div>
             <div class="relative w-[100%] flex justify-center mt-8">
-                <button class="download-button w-40 h-10" v-motion-slide-visible-once-left>
+                <button class="download-button w-40 h-10" @click="createAccount" v-motion-slide-visible-once-left>
                     {{ $t("signup.button1") }}
                 </button>
             </div>
@@ -51,13 +51,16 @@
 <script setup>
 import VueTypewriterEffect from "vue-typewriter-effect";
 import { ref, computed } from 'vue'
-import { parse } from "vue/compiler-sfc";
+import { supabase } from '../supabase/init'
+import { useRouter } from 'vue-router'
 
 const showPassword = ref(false)
 
-const password = ref('')
+const router = useRouter()
 
+const password = ref('')
 const email = ref('')
+const repeat_password = ref('')
 
 const isEmailValid = computed(() => {
     if (email.value === '') {
@@ -105,4 +108,30 @@ const strengthLevel = computed(() => {
         return 5
     }
 })
+
+async function createAccount() {
+    if (password.value === repeat_password.value) {
+        if (strengthLevel.value == 5) {
+            if (isEmailValid.value && email.value.length > 2) {
+                const { data, error } = await supabase.auth.signUp({
+                    email: email.value,
+                    password: password.value
+                })
+                if (error) {
+                    console.log(error)
+                } else {
+                    console.log(data)
+                    router.push('/')
+                    location.reload()
+                }
+            } else {
+                console.log('Email is not valid!')
+            }
+        } else {
+            console.log('Password is not strong enough!')
+        }
+    } else {
+        console.log('Passwords do not match!', password.value, repeat_password.value)
+    }
+}
 </script>

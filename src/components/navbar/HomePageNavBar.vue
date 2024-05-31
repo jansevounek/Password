@@ -8,14 +8,19 @@
             </div>
             <div class="navbar-icon-container">
                 <div class="navbar-icon">
-                    <RouterLink to="/login">
+                    <RouterLink to="/login" v-if="!status">
                         <BIconBoxArrowInRight class="h-5 w-5 text-white" />
                     </RouterLink>
                 </div>
                 <div class="navbar-icon">
-                    <RouterLink to="/signup">
+                    <RouterLink to="/signup" v-if="!status">
                         <BIconPlusSquare class="h-5 w-5 text-white" />
                     </RouterLink>
+                </div>
+                <div class="navbar-icon" v-if="status">
+                    <p class="cursor-pointer" @click="logOut">
+                        <BIconBoxArrowDownLeft class="h-5 w-5 text-white" />
+                    </p>
                 </div>
                 <div class="navbar-icon">
                     <button @click="changeLocale" class="language-button">
@@ -27,20 +32,20 @@
                 </div>
             </div>
             <div class="navbar-text-container">
-                <div class="navbar-text text-secondary">
+                <div class="navbar-text text-secondary" v-if="!status">
                     <RouterLink to="/login">
                         {{ $t("navbar.nav.login") }}
                     </RouterLink>
                 </div>
-                <div class="navbar-text text-secondary">
+                <div class="navbar-text text-secondary" v-if="!status">
                     <RouterLink to="/signup">
                         {{ $t("navbar.nav.signup") }}
                     </RouterLink>
                 </div>
-                <div class="navbar-text text-secondary">
-                    <a href="#download">{{ $t("navbar.nav.download") }}</a>
+                <div class="navbar-text text-secondary" v-if="status">
+                    <p class="cursor-pointer" @click="logOut">{{ $t("navbar.nav.logout") }}</p>
                 </div>
-                <div class="navbar-text text-secondary">
+                <div class="navbar-text text-secondary" v-if="status">
                     <RouterLink to="/mypasswords">
                         {{ $t("navbar.nav.mypasswords") }}
                     </RouterLink>
@@ -59,34 +64,56 @@
             </div>
         </div>
     </div>
-    <NavBarExpand v-if="showAddon" class="absolute md:hidden" />
 </template>
 
 <script setup>
-import NavBarExpand from './NavBarExpand.vue'
-import { ref } from 'vue'
+import { ref, watchEffect } from 'vue'
 import { RouterLink } from 'vue-router';
 import Tr from "@/i18n/translation"
 import { useI18n } from 'vue-i18n'
+import { supabase } from '@/supabase/init';
+import { useRouter } from 'vue-router'
 
-const { locale } = useI18n()
 const i18n = useI18n()
+
+const status = ref(false);
+
+const router = useRouter()
 
 const supportedLocales = Tr.supportedLocales
 
-const showAddon = ref(false)
-
 let localeIndex = ref(0)
-
-const handleNavBarExpand = () => {
-    showAddon.value = !showAddon.value
-}
 
 const changeLocale = () => {
     console.log('changing locale')
     console.log(localeIndex.value)
     localeIndex.value = (localeIndex.value + 1) % supportedLocales.length
     i18n.locale.value = supportedLocales[localeIndex.value]
+}
+
+watchEffect(async () => {
+    const localUser = await supabase.auth.getSession()
+    if (localUser.data.session) {
+        status.value = true
+    } else {
+        status.value = false
+    }
+});
+
+async function seeSession() {
+    const localUser = await supabase.auth.getSession()
+    console.log(localUser);
+    console.log(status.value);
+}
+
+async function logOut() {
+    const { error } = await supabase.auth.signOut();
+    if (error) {
+        console.log(error.message)
+    } else {
+        router.push('/')
+        location.reload()
+    }
 }
 
 </script>
