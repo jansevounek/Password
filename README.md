@@ -1,29 +1,77 @@
-# test3
+# Giberish about project
 
-This template should help get you started developing with Vue 3 in Vite.
+will be here
 
-## Recommended IDE Setup
+# Test Setup in docker
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+clone this repository:
 
-## Customize configuration
+```sh
+git clone https://github.com/jansevounek/Password.git
+```
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+create the .env file:
 
-## Project Setup
+```sh
+touch .env
+```
+
+And add three lines:
+
+```sh
+VITE_SUPPORTED_LOCALES=en,cz
+
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+```
+
+Note: you need to add your own values for the last two. That means that you need to create your own supabase project and add the values. [Tutorial](https://supabase.com/docs/guides/getting-started/quickstarts/vue "Tutorial").
+
+And that is basically it run:
+
+```sh
+sudo docker-compose up -d
+```
+
+That is it your server should be now running on port on localhost 8080.
+
+Note: this is a setup fow linux only (windows is a lot more complicated)
+
+# Test Setup normally
+
+clone this repository:
+
+```sh
+git clone https://github.com/jansevounek/Password.git
+```
+
+create the .env file:
+
+```sh
+touch .env
+```
+
+And add three lines:
+
+```sh
+VITE_SUPPORTED_LOCALES=en,cz
+
+VITE_SUPABASE_URL=
+VITE_SUPABASE_ANON_KEY=
+```
+
+Note: you need to add your own values for the last two. That means that you need to create your own supabase project and add the values. [Tutorial](https://supabase.com/docs/guides/getting-started/quickstarts/vue "Tutorial").
+
+The last part is running:
 
 ```sh
 npm install
 ```
 
-### Compile and Hot-Reload for Development
+and then
 
 ```sh
 npm run dev
 ```
 
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
+Your development server is now running at the adress: http://127.0.0.1:5173/
