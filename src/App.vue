@@ -21,6 +21,5 @@ const routeName = ref('')
 
 onMounted(() => {
   routeName.value = route.path
-  console.log(routeName.value)
 })
 </script>

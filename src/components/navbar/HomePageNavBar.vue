@@ -1,6 +1,6 @@
 <template>
     <div class="relative z-50">
-        <div class="navbar-container" :class="showAddon ? 'bg-primary text-white' : ''">
+        <div class="navbar-container">
             <div class="navbar-logo-container">
                 <RouterLink to="/">
                     <h1 class="main-title">PassDf</h1>
@@ -85,8 +85,6 @@ const supportedLocales = Tr.supportedLocales
 let localeIndex = ref(0)
 
 const changeLocale = () => {
-    console.log('changing locale')
-    console.log(localeIndex.value)
     localeIndex.value = (localeIndex.value + 1) % supportedLocales.length
     i18n.locale.value = supportedLocales[localeIndex.value]
 }

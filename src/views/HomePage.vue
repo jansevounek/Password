@@ -29,30 +29,27 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
 </template>
 
 <script setup>
-import { computed, ref } from "vue";
+import { ref } from "vue";
 import HomePageNavBar from "../components/navbar/HomePageNavBar.vue";
 import Carousel from "../components/homepage/Carousel.vue";
-import {
-    useMouse
-} from '@vueuse/core'
+import { useRouter } from "vue-router";
 
 const left = ref('left')
 const leftEnd = ref('heading-end')
 const rightEnd = ref('heading-end')
-const { y } = useMouse()
+
+const router = useRouter()
 
 const handleOnMove = e => {
-    const p = e.clientX / window.innerWidth * 100;
+    if (router.currentRoute.value.path == "/") {
+        const p = e.clientX / window.innerWidth * 100;
 
-    left.value.style.width = `${p}%`
-    leftEnd.value.style.width = `${p}%`
-    rightEnd.value.style.width = `${100 - p}%`
-    rightEnd.value.style.left = `${p}%`
+        left.value.style.width = `${p}%`
+        leftEnd.value.style.width = `${p}%`
+        rightEnd.value.style.width = `${100 - p}%`
+        rightEnd.value.style.left = `${p}%`
+    }
 }
-
-const width = computed(() => {
-    return y.value
-})
 
 document.onmousemove = e => handleOnMove(e);
 

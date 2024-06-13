@@ -18,8 +18,9 @@
             <form action="">
                 <span class="signup-error-msg" v-if="emailErrorMsg">{{ $t("signup.errormsg.email") }}</span>
 
-                <input type="text" class="log-in-form mt-5" placeholder="Email" v-motion-slide-visible-once-left
-                    v-model="email" :class="isEmailValid === false ? 'wrong-email' : ''">
+                <input type="text" class="log-in-form mt-5 text-white" placeholder="Email"
+                    v-motion-slide-visible-once-left v-model="email"
+                    :class="isEmailValid === false ? 'wrong-email' : ''">
 
                 <span class="signup-error-msg" v-if="password1ErrorMsg">{{ $t("signup.errormsg.password1") }}</span>
                 <br v-if="password2ErrorMsg && password1ErrorMsg">
