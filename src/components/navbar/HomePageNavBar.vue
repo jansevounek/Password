@@ -46,9 +46,15 @@
                     <p class="cursor-pointer" @click="logOut">{{ $t("navbar.nav.logout") }}</p>
                 </div>
                 <div class="navbar-text text-secondary" v-if="status">
-                    <RouterLink to="/mypasswords">
-                        {{ $t("navbar.nav.mypasswords") }}
+                    <RouterLink to="/mymailbox">
+                        {{ $t("navbar.nav.mymailbox") }}
                     </RouterLink>
+                </div>
+                <div class="navbar-text text-secondary">
+                    <a class="cursor-pointer" href="#download">{{ $t("navbar.nav.download") }}</a>
+                </div>
+                <div class="navbar-text text-secondary">
+                    <a class="cursor-pointer" href="#aboutus">{{ $t("navbar.nav.aboutus") }}</a>
                 </div>
                 <div class="ml-auto mr-8 h-[100%] flex flex-row items-center">
                     <img src="https://cdn3.iconfinder.com/data/icons/flag-world/512/flags-06-512.png" alt="czech-flag"

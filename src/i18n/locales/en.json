@@ -4,15 +4,17 @@
       "login": "Log in",
       "signup": "Sign up",
       "logout": "Log out",
-      "mypasswords": "My passwords",
-      "home": "Home"
+      "mymailbox": "My mailbox",
+      "home": "Home",
+      "download": "Download",
+      "aboutus": "About us"
     },
     "navexpand": {
       "home": "Home",
       "login": "Log in",
       "signup": "Sign up",
       "download": "Download",
-      "mypasswords": "My passwords",
+      "mymailbox": "My mailbox",
       "logout": "Log out"
     }
   },

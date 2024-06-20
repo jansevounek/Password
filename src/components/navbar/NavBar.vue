@@ -80,7 +80,6 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
 </template>
 
 <script setup>
-import NavBarExpandable from './NavBarExpandable.vue'
 import { ref, watchEffect } from 'vue'
 import { RouterLink } from 'vue-router';
 import Tr from "@/i18n/translation"

@@ -4,15 +4,17 @@
       "login": "Přihlásit se",
       "signup": "Registrovat se",
       "logout": "Odhlásit se",
-      "mypasswords": "Moje hesla",
-      "home": "Domů"
+      "mymailbox": "Moje schránka",
+      "home": "Domů",
+      "download": "Stáhnout",
+      "aboutus": "O nás"
     },
     "navexpand": {
       "home": "Domů",
       "login": "Přihlásit se",
       "signup": "Registrovat se",
       "download": "Stáhnout",
-      "mypasswords": "Moje hesla",
+      "mymailbox": "Moje schránka",
       "logout": "Odhlásit se"
     }
   },
