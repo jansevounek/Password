@@ -2,7 +2,7 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomePage from "../views/HomePage.vue";
 import LoginPage from "../views/LoginPage.vue";
 import SignupPage from "../views/SignupPage.vue";
-import MyMailBoxPage from "../views/MyMailBoxPage.vue";
+import TestLearn from "../views/TestLearn.vue";
 import { supabase } from "../supabase/init";
 
 let localUser;
@@ -28,9 +28,9 @@ const router = createRouter({
       meta: { requiresUnAuth: true },
     },
     {
-      path: "/mymailbox",
-      name: "mymailboxpage",
-      component: MyMailBoxPage,
+      path: "/testlearn",
+      name: "testlearn",
+      component: TestLearn,
       meta: { requiresAuth: true },
     },
   ],

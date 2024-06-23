@@ -191,16 +191,8 @@ html {
     @apply text-red-400 mt-5;
   }
 
-  /* mail box stuff */
-  .mail-search-bar {
-    @apply h-12 w-80 top-16 left-[50%] translate-x-[-50%] bg-tertiary flex items-center fixed rounded-lg;
-  }
-
-  .mail-search {
-    @apply h-8 rounded-lg p-2 bg-inherit text-secondary ml-auto mr-2 border-2 border-black;
-  }
-
-  .mail-search-icon-box {
-    @apply h-8 w-8 rounded-lg bg-secondary flex items-center justify-center text-white mr-auto;
+  /* terminal stuff */
+  .terminal-input {
+    @apply absolute;
   }
 }

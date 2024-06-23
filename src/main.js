@@ -3,7 +3,6 @@ import App from './App.vue'
 import router from './router'
 import './index.css'
 import { BootstrapIconsPlugin } from 'bootstrap-icons-vue'
-import VueTypeWriter from 'vue-typewriter-effect'
 import { MotionPlugin } from '@vueuse/motion'
 import i18n from "./i18n"
 

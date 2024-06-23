@@ -4,7 +4,7 @@
       "login": "Přihlásit se",
       "signup": "Registrovat se",
       "logout": "Odhlásit se",
-      "mymailbox": "Moje schránka",
+      "testlearn": "Test uceni",
       "home": "Domů",
       "download": "Stáhnout",
       "aboutus": "O nás"
@@ -14,7 +14,7 @@
       "login": "Přihlásit se",
       "signup": "Registrovat se",
       "download": "Stáhnout",
-      "mymailbox": "Moje schránka",
+      "testlearn": "Test uceni",
       "logout": "Odhlásit se"
     }
   },

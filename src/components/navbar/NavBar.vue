@@ -36,6 +36,11 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
                     <BIconBoxArrowDownLeft class="h-5 w-5 text-white" />
                 </p>
             </div>
+            <div class="navbar-icon" v-if="status">
+                <RouterLink to="/testlearn">
+                    <BIconBook class="h-5 w-5 text-white" />
+                </RouterLink>
+            </div>
             <div class="navbar-icon">
                 <button @click="changeLocale" class="language-button">
                     <BIconTranslate class="h-5 w-5 text-white" />
@@ -59,6 +64,11 @@ import { BIcon0Circle } from 'bootstrap-icons-vue';
             <div class="navbar-text" v-if="!status">
                 <RouterLink to="/login">
                     {{ $t("navbar.nav.login") }}
+                </RouterLink>
+            </div>
+            <div class="navbar-text" v-if="status">
+                <RouterLink to="/testlearn">
+                    {{ $t("navbar.nav.testlearn") }}
                 </RouterLink>
             </div>
             <div class="navbar-text" v-if="status">
