@@ -4,17 +4,7 @@
             <h1 class="text-[50px] h-28 main-title">
                 <VueTypewriterEffect :strings="['Create a new account!', 'Sign up!']" />
             </h1>
-            <div class="relative w-[100%] flex flex-row items-center mt-10 justify-center h-12 text-white">
-                <div class="login-form-icon" v-motion-slide-visible-once-left>
-                    <BIconGoogle class="h-4 w-4" />
-                </div>
-                <div class="login-form-icon" v-motion-slide-visible-once-bottom>
-                    <BIconGithub class="h-4 w-4" />
-                </div>
-                <div class="login-form-icon" v-motion-slide-visible-once-right>
-                    <BIconFacebook class="h-4 w-4" />
-                </div>
-            </div>
+            <LoginSignupSocials />
             <form action="">
                 <span class="signup-error-msg" v-if="emailErrorMsg">{{ $t("signup.errormsg.email") }}</span>
 
@@ -61,6 +51,7 @@ import VueTypewriterEffect from "vue-typewriter-effect";
 import { ref, computed } from 'vue'
 import { supabase } from '../supabase/init'
 import { useRouter } from 'vue-router'
+import LoginSignupSocials from '../components/login-signup/LoginSignupSocials.vue'
 
 const showPassword = ref(false)
 
@@ -153,5 +144,11 @@ async function createAccount() {
             location.reload()
         }
     }
+}
+
+function loginWithGoogle() {
+    supabase.auth.signInWithOAuth({
+        provider: 'google',
+    })
 }
 </script>

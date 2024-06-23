@@ -63,5 +63,11 @@ async function logIn() {
         router.push('/')
         location.reload()
     }
-}   
+}
+
+function loginWithGoogle() {
+    supabase.auth.signInWithOAuth({
+        provider: 'google',
+    })
+}
 </script>
